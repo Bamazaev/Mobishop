@@ -1,0 +1,118 @@
+import 'package:mobishop/models/base_model.dart';
+import 'package:mobishop/models/categories_modal.dart';
+
+List<CategoriesModal> categories = [
+  CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 12599.99,
+    title: 'Smartphones',
+    name: 'Iphone 15 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),
+  CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 15599.99,
+    title: 'Smartphones',
+    name: 'Iphone 16 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),
+    CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 17599.99,
+    title: 'Smartphones',
+    name: 'Iphone 15 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),
+  CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 15599.99,
+    title: 'Smartphones',
+    name: 'Iphone 16 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),  
+      CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 17599.99,
+    title: 'Smartphones',
+    name: 'Iphone 15 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),
+  CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 15599.99,
+    title: 'Smartphones',
+    name: 'Iphone 16 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),  
+      CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 17599.99,
+    title: 'Smartphones',
+    name: 'Iphone 15 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),
+  CategoriesModal(
+    imageUrl: 'assets/product/product.png',
+    price: 15599.99,
+    title: 'Smartphones',
+    name: 'Iphone 16 pro max',
+    subtitle: '256 GB (nano-SIM+eSIM), серый',
+  ),  
+];
+
+List<BaseModel> mainList = [
+  BaseModel(
+    imageUrl: 'assets/slider/1.png',
+    name: 'Iphone 15',
+    price: 12599.99,
+    review: 3.6,
+    star: 4.8,
+    id: 1,
+    value: 1,
+  ),
+  BaseModel(
+    imageUrl: 'assets/slider/2.png',
+    name: 'Iphone 16',
+    price: 15599.99,
+    review: 3.6,
+    star: 4.8,
+    id: 2,
+    value: 1,
+  ),
+  BaseModel(
+    imageUrl: 'assets/slider/3.png',
+    name: 'Iphone 17',
+    price: 17599.99,
+    review: 3.6,
+    star: 4.8,
+    id: 3,
+    value: 1,
+  ),
+  BaseModel(
+    imageUrl: 'assets/slider/4.png',
+    name: 'Iphone 18',
+    price: 155.99,
+    review: 3.6,
+    star: 4.8,
+    id: 4,
+    value: 1,
+  ),
+  BaseModel(
+    imageUrl: 'assets/slider/5.png',
+    name: 'Iphone 19',
+    price: 155.99,
+    review: 3.6,
+    star: 4.8,
+    id: 5,
+    value: 1,
+  ),
+  BaseModel(
+    imageUrl: 'assets/slider/6.png',
+    name: 'Iphone 20',
+    price: 155.99,
+    review: 3.6,
+    star: 4.8,
+    id: 6,
+    value: 1,
+  ),
+];
