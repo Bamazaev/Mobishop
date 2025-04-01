@@ -1,7 +1,6 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobishop/data/app_data.dart';
@@ -20,6 +19,7 @@ class _HomeState extends State<Home> {
   final PageController _pageController = PageController();
   Timer? _timer;
   int _currentPage = 0;
+
 
   @override
   void initState() {
@@ -645,11 +645,18 @@ class _HomeState extends State<Home> {
                         InkWell(
                           onTap: () => print('Акция'),
                           child: Container(
-                            child: Center(child: Text('Акция', style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold,),)),
+                            child: Center(
+                              child: Text(
+                                'Акция',
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
                             decoration: BoxDecoration(
-                              
                               borderRadius: BorderRadius.circular(15),
-                              color: Color.fromRGBO(196, 34, 45, 1)
+                              color: Color.fromRGBO(196, 34, 45, 1),
                             ),
                             width: MediaQuery.of(context).size.width * 0.16,
                             height: MediaQuery.of(context).size.height / 2,
@@ -1098,12 +1105,16 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
+
+              
             ],
           ),
         ),
       ),
     );
+    
   }
+   
 
   Widget view(int index, Size size, TextTheme textTheme) {
     return AnimatedBuilder(

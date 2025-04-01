@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobishop/Products/Cart/FavoriteProvider.dart';
 import 'package:mobishop/pages/accaunt.dart';
 import 'package:mobishop/pages/cart.dart';
 import 'package:mobishop/pages/chat.dart';
 import 'package:mobishop/pages/home.dart';
 import 'package:mobishop/pages/katalog.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,19 +25,23 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'OS MOBISHOP',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromRGBO(196, 34, 45, 1),
-        ),
+  Widget build(BuildContext context) => MultiProvider(
+  providers: [
+    ChangeNotifierProvider(create: (_)=>FavoriteProvider()),
+  ],
+  child: MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: 'OS MOBISHOP',
+    theme: ThemeData(
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Color.fromRGBO(196, 34, 45, 1),
       ),
-      home: const MyHomePage(title: 'MOBISHOP'),
-    );
-  }
+    ),
+    home: const MyHomePage(title: 'OS MOBISHOP'),
+  ),
+  );
 }
+  
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -128,8 +134,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               )
               : SizedBox.shrink(
-                
-                child: Text('Naw'),
               ),
     );
   }
