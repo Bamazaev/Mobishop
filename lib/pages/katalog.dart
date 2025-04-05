@@ -13,7 +13,6 @@ class _KatalogState extends State<Katalog> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
         backgroundColor: Color.fromRGBO(196, 34, 45, 0.2),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
@@ -45,46 +44,6 @@ class _KatalogState extends State<Katalog> {
           ),
         ],
       ),
-      body: MediaQuery.of(context).size.width < 600
-      ?GridView.builder(
-        itemCount: 8,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, ), 
-      itemBuilder: (ctx, index){
-        return Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(5),
-              width: MediaQuery.of(context).size.width / 3.3,
-              height: MediaQuery.of(context).size.width / 3.3,
-              
-            decoration: BoxDecoration(
-              
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(color: Color.fromRGBO(196, 34, 45, 1), width: 2),
-            ),
-            )
-          ],
-        );
-      } ):GridView.builder(
-        itemCount: 8,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5, ), 
-      itemBuilder: (ctx, index){
-        return Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(5),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width * 0.18,
-              
-            decoration: BoxDecoration(
-              
-              borderRadius: BorderRadius.circular(15),
-              border: Border.all(color: Color.fromRGBO(196, 34, 45, 1), width: 2),
-            ),
-            )
-          ],
-        );
-      } ),
     );
   }
 }

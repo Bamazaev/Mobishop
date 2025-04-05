@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mobishop/Products/Cart/FavoriteProvider.dart';
+
 
 class Accaunt extends StatefulWidget {
   const Accaunt({super.key});
@@ -12,8 +12,8 @@ class Accaunt extends StatefulWidget {
 class _AccauntState extends State<Accaunt> {
   @override
   Widget build(BuildContext context) {
-    final provider = FavoriteProvider.of(context);
-    final finalList = provider?.favorites ?? [];
+
+
 
     return Scaffold(
       appBar: AppBar(
@@ -40,42 +40,7 @@ class _AccauntState extends State<Accaunt> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 20, left: 20),
-            child: Row(
-              children: [
-                Text(
-                  'Favorites',
-                  style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: finalList.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: ListTile(
-                    title: Text(
-                      finalList[index].name,
-                      style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Text(
-                      finalList[index].decoration,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+      
     );
   }
 }

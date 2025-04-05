@@ -38,6 +38,8 @@ dependencies:
   salomon_bottom_bar: ^3.3.2
   animate_do: ^4.2.0
   provider: ^6.1.4
+  flutter_launcher_icons: ^0.14.3
+  animated_splash_screen: ^1.3.0
   
 
 dev_dependencies:
@@ -50,6 +52,26 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/image/mobi1.png"
+  ios: true
+  adaptive_icon_background: "#C42131"
+  adaptive_icon_foreground: "assets/image/mobi1.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/image/mobilogo1.png"
+    background_color: "#C42131"
+    theme_color: "#C42131"
+  windows:
+    generate: true
+    image_path: "assets/image/mobilogo1.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/image/mobilogo1.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,8 +1,7 @@
-import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mobishop/data/app_data.dart';
-import 'package:mobishop/models/categories_modal.dart';
+
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
