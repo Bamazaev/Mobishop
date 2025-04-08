@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobishop/contact.dart';
 import 'package:mobishop/models/categories_modal.dart';
+import 'package:mobishop/pages/Details/widget/add_to_cart.dart';
+import 'package:mobishop/pages/Details/widget/descriptions.dart';
 import 'package:mobishop/pages/Details/widget/details_app_bar.dart';
 import 'package:mobishop/pages/Details/widget/image_slider.dart';
 import 'package:mobishop/pages/Details/widget/items_details.dart';
@@ -20,6 +22,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(233, 233, 233, 1),
+      // add to cart button
+      floatingActionButton: AddToCart(products: widget.products),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: Column(
           children: [
@@ -83,11 +88,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       ...List.generate(
                         widget.products.color.length,
                         (index) => GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            setState(() {
+                              currentcolor = index;
+                            });
+                          },
                           child: AnimatedContainer(
                             duration: Duration(milliseconds: 300),
-                            width: 35,
-                            height: 35,
+                            width: 40,
+                            height: 40,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color:
@@ -100,12 +109,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                         color: widget.products.color[index],
                                       )
                                       : null,
+                                      
+                            ),
+                            padding: currentcolor == index
+                                ? EdgeInsets.all(2)
+                                : null,
+                                margin: EdgeInsets.only(right: 10),
+
+                            child: Container(
+                              width: 35,
+                              height: 35,
+        decoration: BoxDecoration(
+          color: widget.products.color[index],
+          shape: BoxShape.circle
+        ),
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
+                  SizedBox(height: 25),
+                  Descriptions(decoration: widget.products.decoration),
                 ],
               ),
             ),

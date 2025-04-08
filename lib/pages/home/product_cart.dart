@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobishop/Provider/favorite_provider.dart';
+import 'package:mobishop/contact.dart';
+import 'package:mobishop/data/app_data.dart';
 import 'package:mobishop/models/categories_modal.dart';
 import 'package:mobishop/pages/Details/details_screen.dart';
 
@@ -13,11 +16,15 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
+    final provider = FavoriteProvider.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.push(
-          context, MaterialPageRoute(
-          builder: (context) => DetailsScreen(products: widget.products),),);
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailsScreen(products: widget.products),
+          ),
+        );
       },
       child: Stack(
         children: [
@@ -30,13 +37,16 @@ class _ProductCardState extends State<ProductCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 15),
+                SizedBox(height: 5),
                 Center(
-                  child: Image.asset(
-                    widget.products.image,
-                    width: 130,
-                    height: 130,
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: widget.products.image,
+                    child: Image.asset(
+                      widget.products.image,
+                      width: 160,
+                      height: 160,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -55,34 +65,61 @@ class _ProductCardState extends State<ProductCard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                  Text(
-                    '${widget.products.price} TJS',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                    Text(
+                      '${widget.products.price} TJS',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
-                  ),
-                  Row(
-                    children: [
-                      Row(
-                        children: List.generate(
-                          widget.products.color.length,
-                          (index) => Container(
-                            height: 18,
-                            width: 18,
-                            margin: EdgeInsets.only(right: 4),
-                            decoration: BoxDecoration(
-                              color: widget.products.color[index],
-                              shape: BoxShape.circle,
+                    Row(
+                      children: [
+                        Row(
+                          children: List.generate(
+                            widget.products.color.length,
+                            (index) => Container(
+                              height: 18,
+                              width: 18,
+                              margin: EdgeInsets.only(right: 4),
+                              decoration: BoxDecoration(
+                                color: widget.products.color[index],
+                                shape: BoxShape.circle,
+                              ),
                             ),
                           ),
                         ),
-                      )
-                    ],
-                  )
-                ],)
+                      ],
+                    ),
+                  ],
+                ),
               ],
+            ),
+          ),
+            //for favorite cart
+
+          Positioned(
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  color: secondaryColor,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
+                child: GestureDetector(onTap: () {
+                  provider.toggleFavorite(widget.products);
+                },
+                child: Icon(
+                  provider.isExist(widget.products)?
+                  Icons.favorite:
+                  Icons.favorite_border, color: Colors.white, size: 25,),
+                ),
+              ),
             ),
           ),
         ],

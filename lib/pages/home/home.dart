@@ -72,14 +72,14 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Special for you',
+                      'Последний товар',
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w800,
                       ),
                     ),
                     Text(
-                      'See all',
+                      'Все',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,

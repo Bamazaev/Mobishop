@@ -1,31 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:mobishop/Provider/favorite_provider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mobishop/Provider/cart_provider.dart';
 import 'package:mobishop/contact.dart';
+import 'package:mobishop/pages/Cart/cheak_out.dart';
 
-
-class Favorite extends StatefulWidget {
-  const Favorite({super.key});
+class Cart extends StatefulWidget {
+  const Cart({super.key});
 
   @override
-  State<Favorite> createState() => _FavoriteState();
+  State<Cart> createState() => _CartState();
 }
 
-class _FavoriteState extends State<Favorite> {
-  int isSelected = 0;
-
+class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    final Provider = FavoriteProvider.of(context);
-    final finalList = Provider.favorites;
+    final products = CartProvider.of(context);
+    final finalList = products.cart;
+
+    // ✅ Хисоб кунаки продукт бо виджет
+    Widget productQuantity(IconData icon, int index) {
+      return GestureDetector(
+        onTap: () {
+          setState(() {
+            icon == Icons.add
+                ? products.incrementQtn(index)
+                : products.decrementQtn(index);
+          });
+        },
+        child: Icon(
+          icon,
+          size: 20,
+          color: Colors.white,
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(196, 34, 45, 0.2),
+        backgroundColor: Color.fromRGBO(196, 34, 45, 0.2),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
         ),
         title: const Text(
-          '  Чать',
+          '  Корзина',
           style: TextStyle(
             fontSize: 25,
             color: Color.fromRGBO(196, 34, 45, 1),
@@ -35,7 +52,7 @@ class _FavoriteState extends State<Favorite> {
         actions: [
           IconButton(
             icon: SvgPicture.asset(
-              'assets/icon/chat11.svg',
+              'assets/icon/cartout 1.svg',
               height: 25,
               width: 25,
             ),
@@ -43,8 +60,12 @@ class _FavoriteState extends State<Favorite> {
           ),
         ],
       ),
-      body: Column(children: [
-        Expanded(
+      bottomSheet: CheakOutBox(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            
+            Expanded(
               child: ListView.builder(
                 itemCount: finalList.length,
                 itemBuilder: (context, index) {
@@ -59,12 +80,12 @@ class _FavoriteState extends State<Favorite> {
                             color: textColorw,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(5),
                           child: Row(
                             children: [
                               Container(
-                                height: 85,
-                                width: 85,
+                                height: 110,
+                                width: 95,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
@@ -107,7 +128,7 @@ class _FavoriteState extends State<Favorite> {
                         ),
                       ),
                       Positioned(
-                        top: 40,
+                        top: 35,
                         right: 35,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
@@ -123,8 +144,35 @@ class _FavoriteState extends State<Favorite> {
                                 size: 25,
                               ),
                             ),
-                            
-                            
+                            SizedBox(height: 10),
+                            Container(
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: secondaryColor,
+                                border: Border.all(
+                                  color: Colors.grey.shade200,
+                                  width: 2,
+                                ),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 10),
+                                  productQuantity(Icons.remove, index),
+                                  SizedBox(width: 10),
+                                  Text(
+                                    cartItems.quantity.toString(),
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: textColorw,
+                                    ),
+                                  ),
+                                  SizedBox(width: 10),
+                                  productQuantity(Icons.add, index),
+                                  SizedBox(width: 10),
+                                ],
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -133,8 +181,9 @@ class _FavoriteState extends State<Favorite> {
                 },
               ),
             ),
-      ],),
+          ],
+        ),
+      ),
     );
   }
-
 }

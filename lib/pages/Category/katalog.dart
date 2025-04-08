@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mobishop/pages/Category/Category1.dart';
 
-
-class Cart extends StatefulWidget {
-  const Cart({super.key});
+class Katalog extends StatefulWidget {
+  const Katalog({super.key});
 
   @override
-  State<Cart> createState() => _CartState();
+  State<Katalog> createState() => _KatalogState();
 }
 
-class _CartState extends State<Cart> {
+class _KatalogState extends State<Katalog> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +19,7 @@ class _CartState extends State<Cart> {
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(15)),
         ),
         title: const Text(
-          '  Корзина',
+          '  Каталог',
           style: TextStyle(
             fontSize: 25,
             color: Color.fromRGBO(196, 34, 45, 1),
@@ -30,7 +29,15 @@ class _CartState extends State<Cart> {
         actions: [
           IconButton(
             icon: SvgPicture.asset(
-              'assets/icon/cartout 1.svg',
+              'assets/icon/filter.svg',
+              height: 25,
+              width: 25,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: SvgPicture.asset(
+              'assets/icon/search2.svg',
               height: 25,
               width: 25,
             ),
@@ -38,7 +45,10 @@ class _CartState extends State<Cart> {
           ),
         ],
       ),
-      
+    body: Container(
+                margin: const EdgeInsets.only(left: 15, right: 15),
+                child: Category1(),
+    ),
     );
   }
 }
