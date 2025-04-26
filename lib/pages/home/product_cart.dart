@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobishop/Provider/favorite_provider.dart';
 import 'package:mobishop/contact.dart';
-import 'package:mobishop/data/app_data.dart';
 import 'package:mobishop/models/categories_modal.dart';
 import 'package:mobishop/pages/Details/details_screen.dart';
 

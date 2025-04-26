@@ -5,7 +5,7 @@ import 'package:mobishop/Provider/cart_provider.dart';
 import 'package:mobishop/Provider/favorite_provider.dart';
 import 'package:mobishop/pages/accaunt.dart';
 import 'package:mobishop/pages/Cart/cart.dart';
-import 'package:mobishop/pages/chat.dart';
+import 'package:mobishop/pages/Like.dart';
 import 'package:mobishop/pages/home/home.dart';
 import 'package:mobishop/pages/Category/katalog.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';

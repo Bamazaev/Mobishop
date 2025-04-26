@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mobishop/data/app_data.dart';
 import 'package:mobishop/pages/home/Category.dart';
-import 'package:mobishop/pages/home/MySearchBar.dart';
 import 'package:mobishop/pages/home/allproduct.dart';
 import 'package:mobishop/pages/home/home_icons.dart';
 import 'package:mobishop/pages/home/product_cart.dart';
@@ -33,7 +32,9 @@ class _HomeState extends State<Home> {
             height: 25,
             width: 25,
           ),
-          onPressed: () {},
+          onPressed: () {
+            
+          },
         ),
         title: SvgPicture.asset(
           'assets/icon/logoxbagr.svg',
@@ -57,7 +58,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               //  Поиск
-              Mysearchbar(),
+              
               //  Слайдер
               Sliderhome(),
               //  Кнопки

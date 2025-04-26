@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
+
 class HomeIcons extends StatefulWidget {
   const HomeIcons({super.key});
 
@@ -76,90 +77,96 @@ class _HomeIconsState extends State<HomeIcons> {
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/button/Смартфоны.png',
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                      color: Color.fromRGBO(196, 34, 45, 1),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.13,
+                                InkWell(
+                                  onTap: () {},
                                   child: Container(
-                                    alignment: Alignment.bottomCenter,
-                                    decoration: BoxDecoration(),
-                                    child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.height *
-                                          0.30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        color: Color.fromRGBO(196, 34, 45, 1),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(13),
-                                          bottomRight: Radius.circular(13),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/button/Смартфоны.png',
                                         ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      child: Center(
-                                        child: Text(
-                                          'Смартфоны',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(196, 34, 45, 1),
+                                        width: 2,
+                                      ),
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.30,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.13,
+                                    child: Container(
+                                      alignment: Alignment.bottomCenter,
+                                      decoration: BoxDecoration(),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.height *
+                                            0.30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Color.fromRGBO(196, 34, 45, 1),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(13),
+                                            bottomRight: Radius.circular(13),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Смартфоны',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/button/Ноутбуки.png',
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                      color: Color.fromRGBO(196, 34, 45, 1),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.13,
+                                InkWell(
+                                  onTap: (){},
                                   child: Container(
-                                    alignment: Alignment.bottomCenter,
-                                    decoration: BoxDecoration(),
-                                    child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.height *
-                                          0.30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        color: Color.fromRGBO(196, 34, 45, 1),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(13),
-                                          bottomRight: Radius.circular(13),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/button/Ноутбуки.png',
                                         ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      child: Center(
-                                        child: Text(
-                                          'Ноутбуки',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(196, 34, 45, 1),
+                                        width: 2,
+                                      ),
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.30,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.13,
+                                    child: Container(
+                                      alignment: Alignment.bottomCenter,
+                                      decoration: BoxDecoration(),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.height *
+                                            0.30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Color.fromRGBO(196, 34, 45, 1),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(13),
+                                            bottomRight: Radius.circular(13),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Ноутбуки',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -176,111 +183,126 @@ class _HomeIconsState extends State<HomeIcons> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                        'assets/button/Акссесуары.png',
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                      color: Color.fromRGBO(196, 34, 45, 1),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.13,
+                                InkWell(
+                                  onTap: () {
+                                    
+                                  },
                                   child: Container(
-                                    alignment: Alignment.bottomCenter,
-                                    decoration: BoxDecoration(),
-                                    child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.height *
-                                          0.30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        color: Color.fromRGBO(196, 34, 45, 1),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(13),
-                                          bottomRight: Radius.circular(13),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/button/Акссесуары.png',
                                         ),
+                                        fit: BoxFit.cover,
                                       ),
-                                      child: Center(
-                                        child: Text(
-                                          'Акссесуары',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(196, 34, 45, 1),
+                                        width: 2,
+                                      ),
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.30,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.13,
+                                    child: Container(
+                                      alignment: Alignment.bottomCenter,
+                                      decoration: BoxDecoration(),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.height *
+                                            0.30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Color.fromRGBO(196, 34, 45, 1),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(13),
+                                            bottomRight: Radius.circular(13),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Акссесуары',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
+                                InkWell(
+                                  onTap: () {
+                                    
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(196, 34, 45, 1),
+                                        width: 2,
+                                      ),
                                       color: Color.fromRGBO(196, 34, 45, 1),
-                                      width: 2,
                                     ),
-                                    color: Color.fromRGBO(196, 34, 45, 1),
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.13,
-                                  child: Center(
-                                    child: Text(
-                                      'Акция',
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.30,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.13,
+                                    child: Center(
+                                      child: Text(
+                                        'Акция',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage('assets/button/БУ.png'),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                    border: Border.all(
-                                      color: Color.fromRGBO(196, 34, 45, 1),
-                                      width: 2,
-                                    ),
-                                  ),
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.13,
+                                InkWell(
+                                  onTap: () {
+                                    
+                                  },
                                   child: Container(
-                                    alignment: Alignment.bottomCenter,
-                                    decoration: BoxDecoration(),
-                                    child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.height *
-                                          0.30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        color: Color.fromRGBO(196, 34, 45, 1),
-                                        borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(13),
-                                          bottomRight: Radius.circular(13),
-                                        ),
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: AssetImage('assets/button/БУ.png'),
+                                        fit: BoxFit.cover,
                                       ),
-                                      child: Center(
-                                        child: Text(
-                                          'Б/У',
-                                          style: TextStyle(
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.bold,
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: Color.fromRGBO(196, 34, 45, 1),
+                                        width: 2,
+                                      ),
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.30,
+                                    height:
+                                        MediaQuery.of(context).size.height * 0.13,
+                                    child: Container(
+                                      alignment: Alignment.bottomCenter,
+                                      decoration: BoxDecoration(),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.height *
+                                            0.30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          color: Color.fromRGBO(196, 34, 45, 1),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(13),
+                                            bottomRight: Radius.circular(13),
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Б/У',
+                                            style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.bold,
+                                            ),
                                           ),
                                         ),
                                       ),

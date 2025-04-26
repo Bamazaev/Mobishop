@@ -9,7 +9,7 @@ class CheakOutBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final Provider=CartProvider.of(context);
     return Container(
-      height: 300,
+      height: 263,
       width: double.infinity,
       decoration: BoxDecoration(
         color: textColorw,
@@ -61,7 +61,7 @@ class CheakOutBox extends StatelessWidget {
                 color: Colors.grey,
               ),
               ),
-              Text('${Provider.totalPrince()}  Сомони',
+              Text('${Provider.totalPrice()}  Сомони',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class CheakOutBox extends StatelessWidget {
                 color: secondaryColor,
               ),
               ),
-              Text('${Provider.totalPrince()}  Сомони',
+              Text('${Provider.totalPrice()}  Сомони',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mobishop/data/app_data.dart';
-import 'package:mobishop/pages/home/allproduct.dart';
 import 'package:mobishop/pages/home/product_cart.dart';
 
 class Category1 extends StatelessWidget {

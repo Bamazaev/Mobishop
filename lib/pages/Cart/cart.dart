@@ -85,7 +85,7 @@ class _CartState extends State<Cart> {
                             children: [
                               Container(
                                 height: 110,
-                                width: 95,
+                                width: 100,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                 ),

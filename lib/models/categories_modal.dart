@@ -39,4 +39,15 @@ class CategoriesModal {
     required this.imageUrl, 
     required this.subtitle,
   });
+
+  // Барои муқоисаи маҳсулотҳо дар сабад
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is ProductModal && other.id == id;
+  }
+
+  @override
+  int get hashCode => id.hashCode;
 }
